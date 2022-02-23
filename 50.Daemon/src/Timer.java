@@ -40,7 +40,7 @@ public class Timer extends Thread {
             try {
                 sleep(timestamp);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                break;
             }
         }
 

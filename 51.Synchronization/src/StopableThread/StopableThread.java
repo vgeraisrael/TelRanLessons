@@ -1,7 +1,7 @@
 package StopableThread;
 
 public class StopableThread extends Thread {
-    private boolean isStopped = false;
+    private volatile boolean isStopped = false;
 
     public StopableThread() {
     }
@@ -13,11 +13,6 @@ public class StopableThread extends Thread {
 
         while (!isStopped) {
             System.out.println("while");
-            try {
-                sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             for(int i = 0; i < 1_000_000_000; i++) {
 
             }
@@ -25,7 +20,7 @@ public class StopableThread extends Thread {
         System.out.println("Run stooped");
     }
 
-    public void changeRunning() {
+    public synchronized void changeRunning() {
         System.out.println("boolean is changed");
         isStopped = true;
     }

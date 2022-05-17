@@ -1,6 +1,6 @@
 package telran.concurrent;
 
-public class MessageBox extends Thread {
+public class MessageBox {
     private String message;
 
     synchronized public void putMessage(String message) {

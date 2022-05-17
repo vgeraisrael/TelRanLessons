@@ -18,7 +18,7 @@ public class GroupsExecutorSum {
         ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         Future<Long>[] groupTask = new Future[N_GROUPS];
 
-        for(int i = 0; i < N_GROUPS; i++){
+        for(int i = 0; i < N_GROUPS; i++) {
             groupTask[i] = es.submit(new OneGroupSum(groups[i]));
         }
         es.shutdown();
@@ -37,7 +37,7 @@ public class GroupsExecutorSum {
     private static int[][] getRandomGroups() {
         Random rand = new Random();
         int[][] res = new int[N_GROUPS][N_NUMBERS];
-        for(int i = 0; i < N_GROUPS; i++){
+        for(int i = 0; i < N_GROUPS; i++) {
             res[i] = rand.ints(N_NUMBERS, 1, Integer.MAX_VALUE).toArray();
         }
         return res;

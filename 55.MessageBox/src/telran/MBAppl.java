@@ -24,7 +24,7 @@ public class MBAppl {
 
         stopReceivers(receivers);
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
     }
 

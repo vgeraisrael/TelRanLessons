@@ -11,7 +11,7 @@ public class StopableThread extends Thread {
         super.run();
         System.out.println("Run begin");
 
-        while (!isStopped) {
+        while (!isStopped ) {
             System.out.println("while");
             for(int i = 0; i < 1_000_000_000; i++) {
 
